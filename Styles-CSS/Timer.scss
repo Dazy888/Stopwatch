@@ -1,0 +1,155 @@
+// Main Styles
+.new_lap {
+  width: fit-content;
+  margin: 70px auto auto auto;
+  font-size: 40px;
+  color: white;
+}
+
+.load_animation {
+  margin-top: 240px !important;
+  opacity: 1 !important;
+}
+
+.flex_property_set {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  max-width: 1920px;
+  margin: auto;
+}
+
+#wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background: black;
+  opacity: 0.9;
+  font-family: 'Roboto';
+}
+
+.container {
+  width: 850px;
+  height: fit-content;
+
+  // Controllers
+  .controllers {
+    text-align: center;
+    height: 300px;
+
+    button {
+      font-size: 40px;
+      background: transparent;
+      border: none;
+      color: white;
+      cursor: pointer;
+      //opacity: 0;
+      transition: transform 0.3s, opacity 1s, margin 1s ;
+      margin-right: 20px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:hover {
+        transform: translateY(-20px);
+      }
+    }
+  }
+}
+
+// Stopwatch
+.stopwatch {
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 150px;
+  color: white;
+  margin-top: 40px;
+
+  .stopwatch__colon {
+    font-size: 150px;
+    margin: 20px;
+  }
+
+  .stopwatch__container {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    border: 3px solid white;
+  }
+}
+
+// Responsive Layout
+@media screen and (max-width: 880px) {
+  button {
+    &:hover {
+      transform: translateY(0) !important;
+    }
+  }
+
+  .stopwatch {
+    flex-direction: column;
+
+    .stopwatch__container {
+      margin: 0 auto 30px auto;
+    }
+
+    span {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 660px) {
+  button {
+    font-size: 30px !important;
+  }
+
+  .stopwatch__container {
+    width: 180px !important;
+    height: 180px !important;
+
+    p {
+      font-size: 110px;
+    }
+  }
+}
+
+@media screen and (max-width: 530px) {
+  button {
+    font-size: 25px !important;
+  }
+
+  .stopwatch__container {
+    width: 150px !important;
+    height: 150px !important;
+
+    p {
+      font-size: 90px;
+    }
+  }
+}
+
+@media screen and (max-width: 460px) {
+  button {
+    font-size: 20px !important;
+  }
+
+  .stopwatch__container {
+    width: 130px !important;
+    height: 130px !important;
+
+    p {
+      font-size: 70px;
+    }
+  }
+}

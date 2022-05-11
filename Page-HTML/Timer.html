@@ -2,43 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timer</title>
-<!--    CSS-->
+    <!--    CSS-->
     <link rel="stylesheet" href="../Styles-CSS/Timer.css">
-<!--    Google Fonts-->
+    <!--    Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
 </head>
 <body>
-    <div id="wrapper">
-        <div class="container">
-            <!--            Block with buttons-->
-            <div class="item">
-                <ul class="item_list">
-                    <li class="menu_item"><button class="start_btn item_btn">Start</button></li>
-                    <li class="menu_item"><button class="lap_btn item_btn">Lap</button></li>
-                    <li class="menu_item"><button class="stop_btn item_btn">Stop</button></li>
-                    <li class="menu_item"><button class="restart_btn item_btn">Restart</button></li>
-                    <li class="menu_item"><button class="clear_btn item_btn">Clear-Laps</button></li>
-                </ul>
+<div id="wrapper" class="flex_property_set">
+    <div class="container">
+        <!--            Controllers-->
+        <div class="controllers">
+            <button class="start_btn item_btn">Start</button>
+            <button class="lap_btn item_btn">Lap</button>
+            <button class="stop_btn item_btn">Stop</button>
+            <button class="restart_btn item_btn">Restart</button>
+            <button class="clear_btn item_btn">Clear-Laps</button>
+        </div>
+        <!--            Stopwatch-->
+        <div class="stopwatch">
+            <div class="stopwatch__container flex_property_set">
+                <p class="minutes">00</p>
             </div>
-            <!--                    Block with time-->
-            <div class="timer">
-                <div class="timer_bl">
-                    <p class="timer_text"><span class="m">00</span></p>
-                </div>
-                <span class="colon">:</span>
-                <div class="timer_bl">
-                    <p class="timer_text"><span class="s">00</span></p>
-                </div>
-                <span class="colon">:</span>
-                <div class="timer_bl">
-                    <p class="timer_text"><span class="ms">00</span></p>
-                </div>
+            <span class="stopwatch__colon">:</span>
+            <div class="stopwatch__container flex_property_set">
+                <p class="seconds">00</p>
+            </div>
+            <span class="stopwatch__colon">:</span>
+            <div class="stopwatch__container flex_property_set">
+                <p class="milliseconds">00</p>
             </div>
         </div>
     </div>
-    <script src="../Logic-JS/Timer.js"></script>
+</div>
+<script src="../Logic-JS/Timer.js"></script>
 </body>
 </html>
