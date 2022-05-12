@@ -44,11 +44,12 @@ function startInterval() {
 
 // Event Listeners
 function loadAnimation() {
+    console.log(startBtn)
     setTimeout(() => { startBtn.classList.add('load_animation') },300)
-    // setTimeout(() => { // lapBtn.classList.add('load_animation') },20000)
-    // setTimeout(() => { // stopBtn.classList.add('load_animation') },700)
-    // setTimeout(() => { // restartBtn.classList.add('load_animation') },900)
-    // setTimeout(() => { // clearBtn.classList.add('load_animation') },1100)
+    setTimeout(() => { lapBtn.classList.add('load_animation') },600)
+    setTimeout(() => { stopBtn.classList.add('load_animation') },900)
+    setTimeout(() => { restartBtn.classList.add('load_animation') },1200)
+    setTimeout(() => { clearBtn.classList.add('load_animation') },1500)
 }
 
 function startTimer() {

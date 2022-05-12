@@ -41,25 +41,29 @@ body {
 
   // Controllers
   .controllers {
-    text-align: center;
+    display: flex;
+    justify-content: center;
     height: 300px;
 
     button {
+      width: fit-content;
+      height: fit-content;
+      display: block;
       font-size: 40px;
       background: transparent;
       border: none;
       color: white;
       cursor: pointer;
-      //opacity: 0;
-      transition: transform 0.3s, opacity 1s, margin 1s ;
-      margin-right: 20px;
-
-      &:last-child {
-        margin-right: 0;
-      }
+      opacity: 0;
+      margin-right: 30px;
+      transition: transform 0.3s, opacity 1s, margin 1s;
 
       &:hover {
         transform: translateY(-20px);
+      }
+
+      &:last-child {
+        margin-right: 0;
       }
     }
   }
@@ -90,6 +94,10 @@ body {
 
 // Responsive Layout
 @media screen and (max-width: 880px) {
+  .new_lap {
+    margin-top: 30px;
+  }
+
   button {
     &:hover {
       transform: translateY(0) !important;
@@ -109,7 +117,7 @@ body {
   }
 }
 
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 680px) {
   button {
     font-size: 30px !important;
   }
@@ -124,9 +132,17 @@ body {
   }
 }
 
-@media screen and (max-width: 530px) {
+@media screen and (max-width: 540px) {
+  .new_lap {
+    font-size: 30px;
+  }
+
   button {
     font-size: 25px !important;
+  }
+
+  .stopwatch {
+    margin-top: 20px;
   }
 
   .stopwatch__container {
@@ -139,14 +155,19 @@ body {
   }
 }
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 470px) {
   button {
     font-size: 20px !important;
+    margin-right: 20px !important;
+
+    &:last-child {
+      margin-right: 0 !important;
+    }
   }
 
   .stopwatch__container {
-    width: 130px !important;
-    height: 130px !important;
+    width: 120px !important;
+    height: 120px !important;
 
     p {
       font-size: 70px;
