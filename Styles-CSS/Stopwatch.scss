@@ -4,6 +4,8 @@
   margin: 70px auto auto auto;
   font-size: 40px;
   color: white;
+  padding: 5px 15px;
+  border: 3px solid white;
 }
 
 .load_animation {
@@ -156,6 +158,10 @@ body {
 }
 
 @media screen and (max-width: 470px) {
+  .new_lap {
+    font-size: 20px;
+  }
+
   button {
     font-size: 20px !important;
     margin-right: 20px !important;
