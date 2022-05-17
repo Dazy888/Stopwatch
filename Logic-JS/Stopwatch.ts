@@ -1,7 +1,7 @@
 // Getting All Elements
 const container: any = document.querySelector('.container')
 
-// Controllers
+// Controls
 const allButtons: any = document.querySelectorAll('button')
 const startBtn: any = document.querySelector('.start_btn')
 const lapBtn: any = document.querySelector('.lap_btn')
@@ -9,7 +9,7 @@ const stopBtn: any = document.querySelector('.stop_btn')
 const restartBtn: any = document.querySelector('.restart_btn')
 const clearBtn: any = document.querySelector('.clear_btn')
 
-// Stopwatch Timer Items
+// Time Items
 const minutes: any = document.querySelector('.minutes')
 const seconds: any = document.querySelector('.seconds')
 const milliseconds: any = document.querySelector('.milliseconds')
@@ -18,14 +18,14 @@ const milliseconds: any = document.querySelector('.milliseconds')
 let m: number = 0
 let s: number = 0
 let ms: number = 0
-// Variable for interval
+// Variable For Interval
 let startInt: any
 
 // Start Interval Function
 function startInterval() {
-    if (ms < 10) { milliseconds.innerText = '0' + ms }
-    if (s < 10) { seconds.innerText = '0' + s }
-    if (m < 10) { minutes.innerText = '0' + m }
+    if (ms < 10) milliseconds.innerText = '0' + ms
+    if (s < 10) seconds.innerText = '0' + s
+    if (m < 10) minutes.innerText = '0' + m
 
     if (ms > 98) {
         ms = 0
@@ -52,12 +52,14 @@ function loadAnimation() {
         i++
     }, 300)
 }
+window.onload = loadAnimation
 
 function startTimer() {
     startBtn.onclick = null
     stopBtn.onclick = stopTimer
     startInt = setInterval(startInterval, 10)
 }
+startBtn.onclick = startTimer
 
 function stopTimer() {
     stopBtn.onclick = null
@@ -71,7 +73,11 @@ function newLap() {
     p.innerText = minutes.innerText + ':' + seconds.innerText + ':' + milliseconds.innerText
     p.classList.add('new_lap')
     container.append(p)
+    setTimeout(() => {
+        p.style.width = 150 + 'px'
+    }, 100)
 }
+lapBtn.onclick = newLap
 
 function restartTimer() {
     minutes.innerText = '00'
@@ -81,15 +87,10 @@ function restartTimer() {
     s = 0
     ms = 0
 }
+restartBtn.onclick = restartTimer
 
 function clearLaps() {
     let laps: any = document.querySelectorAll('.new_lap')
     for (let lap of laps) { lap.remove() }
 }
-
-// Setting Event Listeners
-window.onload = loadAnimation
-startBtn.onclick = startTimer
-lapBtn.onclick = newLap
-restartBtn.onclick = restartTimer
 clearBtn.onclick = clearLaps
