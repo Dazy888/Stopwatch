@@ -2,6 +2,7 @@
 const container: any = document.querySelector('.container')
 
 // Controls
+const controlsBl: any = document.querySelector('.controls')
 const allButtons: any = document.querySelectorAll('button')
 const startBtn: any = document.querySelector('.start_btn')
 const lapBtn: any = document.querySelector('.lap_btn')
@@ -48,7 +49,8 @@ function loadAnimation() {
     let i: number = 0
     let animationInterval = setInterval(() => {
         if (i === 4) { clearInterval(animationInterval) }
-        allButtons[i].classList.add('load_animation')
+        allButtons[i].style.opacity = 1
+        allButtons[i].style.marginTop = controlsBl.clientHeight - allButtons[i].clientHeight + 'px'
         i++
     }, 300)
 }
