@@ -96,6 +96,11 @@ restartBtn.onclick = restartTimer
 
 function clearLaps() {
     let laps: any = document.querySelectorAll('.new_lap')
-    for (let lap of laps) { lap.remove() }
+    for (let lap of laps) {
+        lap.style.opacity = 0
+        setTimeout(() => {
+            lap.remove()
+        }, 1000)
+    }
 }
 clearBtn.onclick = clearLaps
