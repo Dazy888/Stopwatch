@@ -26,7 +26,7 @@ function startInterval() {
         seconds.innerText = '0' + s;
     if (m < 10)
         minutes.innerText = '0' + m;
-    if (ms > 98) {
+    if (ms === 99) {
         ms = 0;
         s++;
         seconds.innerText = s;
@@ -76,11 +76,12 @@ function newLap() {
     setTimeout(function () {
         if (document.documentElement.clientWidth > 615)
             p.style.width = 150 + 'px';
-        if (document.documentElement.clientWidth > 515 || document.documentElement.clientWidth < 615)
+        if (document.documentElement.clientWidth > 515 && document.documentElement.clientWidth < 615)
             p.style.width = 110 + 'px';
-        if (document.documentElement.clientWidth > 400 || document.documentElement.clientWidth < 515)
+        if (document.documentElement.clientWidth > 400 && document.documentElement.clientWidth < 515)
             p.style.width = 70 + 'px';
-        p.style.width = 55 + 'px';
+        if (document.documentElement.clientWidth < 400)
+            p.style.width = 55 + 'px';
     }, 100);
 }
 lapBtn.onclick = newLap;
