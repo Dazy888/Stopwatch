@@ -76,7 +76,10 @@ function newLap() {
     p.classList.add('new_lap')
     container.append(p)
     setTimeout(() => {
-        p.style.width = 150 + 'px'
+        if (document.documentElement.clientWidth > 615) p.style.width = 150 + 'px'
+        if (document.documentElement.clientWidth > 515 || document.documentElement.clientWidth < 615) p.style.width = 110 + 'px'
+        if (document.documentElement.clientWidth > 400 || document.documentElement.clientWidth < 515) p.style.width = 70 + 'px'
+        p.style.width = 55 + 'px'
     }, 100)
 }
 lapBtn.onclick = newLap

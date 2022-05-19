@@ -216,25 +216,55 @@ body {
 }
 
 @media screen and (max-width: 400px) {
+  .new_lap {
+    font-size: 15px;
+  }
+
   .controls {
-    height: 100px !important;
+    height: 120px !important;
   }
 
   button {
-    font-size: 15px !important;
     margin-right: 15px !important;
+  }
 
-    &:last-child {
-      margin-right: 0 !important;
+  .time {
+    width: 350px !important;
+    margin: 30px auto 0;
+
+    .time__container {
+      width: 90px !important;
+      height: 90px !important;
+      font-size: 50px !important;
     }
+
+    .time__colon {
+      font-size: 50px !important;
+    }
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .new_lap {
+    font-size: 15px;
+  }
+
+  .controls {
+    height: 120px !important;
+  }
+
+  button {
+    font-size: 17px !important;
+    margin-right: 15px !important;
   }
 
   .time {
     width: 300px !important;
+    margin: 20px auto 0;
 
     .time__container {
-      width: 70px !important;
-      height: 70px !important;
+      width: 80px !important;
+      height: 80px !important;
       font-size: 40px !important;
     }
 
