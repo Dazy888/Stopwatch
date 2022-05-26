@@ -45,33 +45,39 @@ function startInterval() {
 }
 
 // Event Listeners
-function loadAnimation() {
+// Loading Animation
+function loadingAnimation() {
     let i: number = 0
-    let animationInterval = setInterval(() => {
-        if (i === 4) { clearInterval(animationInterval) }
+    const animationInterval = setInterval(() => {
+        if (i === 4) clearInterval(animationInterval)
         allButtons[i].style.opacity = 1
         allButtons[i].style.marginTop = controlsBl.clientHeight - allButtons[i].clientHeight + 'px'
         i++
     }, 300)
 }
-window.onload = loadAnimation
 
+window.onload = loadingAnimation
+
+// Start Btn
 function startTimer() {
     startBtn.onclick = null
     stopBtn.onclick = stopTimer
     startInt = setInterval(startInterval, 10)
 }
+
 startBtn.onclick = startTimer
 
+// Stop Btn
 function stopTimer() {
     stopBtn.onclick = null
     startBtn.onclick = startTimer
     clearInterval(startInt)
 }
 
-function newLap() {
-    if (document.querySelectorAll('.new_lap').length >= 3) { return true }
-    let p: any = document.createElement('p')
+// Lap Btn
+function makeLap() {
+    if (document.querySelectorAll('.new_lap').length >= 3) return
+    const p: any = document.createElement('p')
     p.innerText = minutes.innerText + ':' + seconds.innerText + ':' + milliseconds.innerText
     p.classList.add('new_lap')
     container.append(p)
@@ -82,8 +88,10 @@ function newLap() {
         if (document.documentElement.clientWidth < 400) p.style.width = 55 + 'px'
     }, 100)
 }
-lapBtn.onclick = newLap
 
+lapBtn.onclick = makeLap
+
+// Restart Btn
 function restartTimer() {
     minutes.innerText = '00'
     seconds.innerText = '00'
@@ -92,10 +100,12 @@ function restartTimer() {
     s = 0
     ms = 0
 }
+
 restartBtn.onclick = restartTimer
 
+// Clear-Laps Btn
 function clearLaps() {
-    let laps: any = document.querySelectorAll('.new_lap')
+    const laps: any = document.querySelectorAll('.new_lap')
     for (let lap of laps) {
         lap.style.opacity = 0
         setTimeout(() => {
@@ -103,4 +113,5 @@ function clearLaps() {
         }, 1000)
     }
 }
+
 clearBtn.onclick = clearLaps

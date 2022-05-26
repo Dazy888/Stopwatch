@@ -1,3 +1,6 @@
+// Imports
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,300;1,400&display=swap');
+
 // Main Styles
 .new_lap {
   width: 0;
@@ -20,16 +23,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  max-width: 1920px;
-  margin: auto;
 }
 
 #wrapper {
