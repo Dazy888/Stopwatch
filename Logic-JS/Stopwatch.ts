@@ -81,11 +81,12 @@ function makeLap() {
     p.innerText = minutes.innerText + ':' + seconds.innerText + ':' + milliseconds.innerText
     p.classList.add('new_lap')
     container.append(p)
+    const windowWidth = document.documentElement.clientWidth 
     setTimeout(() => {
-        if (document.documentElement.clientWidth > 615) p.style.width = 150 + 'px'
-        if (document.documentElement.clientWidth > 515 && document.documentElement.clientWidth < 615) p.style.width = 110 + 'px'
-        if (document.documentElement.clientWidth > 400 && document.documentElement.clientWidth < 515) p.style.width = 70 + 'px'
-        if (document.documentElement.clientWidth < 400) p.style.width = 55 + 'px'
+        if (windowWidth > 615) p.style.width = 150 + 'px'
+        if (windowWidth > 515 && windowWidth < 615) p.style.width = 110 + 'px'
+        if (windowWidth > 400 && windowWidth < 515) p.style.width = 70 + 'px'
+        if (windowWidth < 400) p.style.width = 55 + 'px'
     }, 100)
 }
 
