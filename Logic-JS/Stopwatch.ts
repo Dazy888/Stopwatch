@@ -2,13 +2,13 @@
 const container: any = document.querySelector('.container')
 
 // Controls
-const controlsBl: any = document.querySelector('.controls')
+const controlsBl: any = document.querySelector('.container__controls')
 const allButtons: any = document.querySelectorAll('button')
-const startBtn: any = document.querySelector('.start_btn')
-const lapBtn: any = document.querySelector('.lap_btn')
-const stopBtn: any = document.querySelector('.stop_btn')
-const restartBtn: any = document.querySelector('.restart_btn')
-const clearBtn: any = document.querySelector('.clear_btn')
+const startBtn: any = document.querySelector('.start-btn')
+const lapBtn: any = document.querySelector('.lap-btn')
+const stopBtn: any = document.querySelector('.stop-btn')
+const restartBtn: any = document.querySelector('.restart-btn')
+const clearBtn: any = document.querySelector('.clear-btn')
 
 // Time Items
 const minutes: any = document.querySelector('.minutes')
@@ -46,17 +46,15 @@ function startInterval() {
 
 // Event Listeners
 // Loading Animation
-function loadingAnimation() {
+window.onload = () => {
     let i: number = 0
     const animationInterval = setInterval(() => {
-        if (i === 4) clearInterval(animationInterval)
+        if (i > 3) clearInterval(animationInterval)
         allButtons[i].style.opacity = 1
         allButtons[i].style.marginTop = controlsBl.clientHeight - allButtons[i].clientHeight + 'px'
         i++
     }, 300)
 }
-
-window.onload = loadingAnimation
 
 // Start Btn
 function startTimer() {
@@ -75,13 +73,13 @@ function stopTimer() {
 }
 
 // Lap Btn
-function makeLap() {
+lapBtn.onclick = () => {
     if (document.querySelectorAll('.new_lap').length >= 3) return
     const p: any = document.createElement('p')
     p.innerText = minutes.innerText + ':' + seconds.innerText + ':' + milliseconds.innerText
-    p.classList.add('new_lap')
+    p.classList.add('new-lap')
     container.append(p)
-    const windowWidth = document.documentElement.clientWidth 
+    const windowWidth = document.documentElement.clientWidth
     setTimeout(() => {
         if (windowWidth > 615) p.style.width = 150 + 'px'
         if (windowWidth > 515 && windowWidth < 615) p.style.width = 110 + 'px'
@@ -90,10 +88,8 @@ function makeLap() {
     }, 100)
 }
 
-lapBtn.onclick = makeLap
-
 // Restart Btn
-function restartTimer() {
+restartBtn.onclick = () => {
     minutes.innerText = '00'
     seconds.innerText = '00'
     milliseconds.innerText = '00'
@@ -102,17 +98,13 @@ function restartTimer() {
     ms = 0
 }
 
-restartBtn.onclick = restartTimer
-
 // Clear-Laps Btn
-function clearLaps() {
-    const laps: any = document.querySelectorAll('.new_lap')
-    for (let lap of laps) {
+clearBtn.onclick = () => {
+    const laps: any = document.querySelectorAll('.new-lap')
+    for (const lap of laps) {
         lap.style.opacity = 0
         setTimeout(() => {
             lap.remove()
         }, 1000)
     }
 }
-
-clearBtn.onclick = clearLaps

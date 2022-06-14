@@ -7,7 +7,7 @@
   padding: 0;
 }
 
-.new_lap {
+.new-lap {
   width: 0;
   margin: 70px auto auto auto;
   padding: 5px 15px;
@@ -19,12 +19,12 @@
   color: white;
 }
 
-.load_animation {
+.load-animation {
   margin-top: 240px !important;
   opacity: 1 !important;
 }
 
-.flex_property_set {
+.flex-property-set {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,7 +42,7 @@
   width: 850px;
   height: fit-content;
 
-  .controls {
+  .container__controls {
     display: flex;
     justify-content: center;
     height: 300px;
@@ -72,7 +72,7 @@
   }
 }
 
-.time {
+.container__time {
   height: fit-content;
   display: flex;
   justify-content: space-between;

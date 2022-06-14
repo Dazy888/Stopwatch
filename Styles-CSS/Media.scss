@@ -1,4 +1,5 @@
 @media screen and (max-width: 1200px) {
+  // Clear Animations
   button {
     &:hover {
       transform: translateY(0) !important;
@@ -7,11 +8,13 @@
 }
 
 @media screen and (max-width: 880px) {
-  .new_lap {
+  // Lap
+  .new-lap {
     margin-top: 30px;
   }
 
-  .time {
+  // Time Block
+  .container__time {
     width: 700px !important;
     margin: 40px auto 0 auto;
 
@@ -28,15 +31,17 @@
 }
 
 @media screen and (max-width: 745px) {
-  .controls {
+  // Controls
+  .container__controls {
     height: 250px !important;
+
+    .controls__item {
+      font-size: 30px !important;
+    }
   }
 
-  button {
-    font-size: 30px !important;
-  }
-
-  .time {
+  // Time Block
+  .container__time {
     width: 600px !important;
     margin: 40px auto 0 auto;
 
@@ -53,19 +58,22 @@
 }
 
 @media screen and (max-width: 615px) {
+  // Lap
   .new_lap {
     font-size: 30px;
   }
 
-  .controls {
+  // Controls
+  .container__controls {
     height: 200px !important;
+
+    .controls__item {
+      font-size: 25px !important;
+    }
   }
 
-  button {
-    font-size: 25px !important;
-  }
-
-  .time {
+  // Time Block
+  .container__time {
     width: 500px !important;
 
     .time__container {
@@ -81,24 +89,27 @@
 }
 
 @media screen and (max-width: 535px) {
+  // Lap
   .new_lap {
     font-size: 20px;
   }
 
-  .controls {
+  // Controls
+  .container__controls {
     height: 150px !important;
-  }
 
-  button {
-    font-size: 20px !important;
-    margin-right: 20px !important;
+    .controls__item {
+      font-size: 20px !important;
+      margin-right: 20px !important;
 
-    &:last-child {
-      margin-right: 0 !important;
+      &:last-child {
+        margin-right: 0 !important;
+      }
     }
   }
 
-  .time {
+  // Time Block
+  .container__time {
     width: 400px !important;
 
     .time__container {
@@ -114,19 +125,22 @@
 }
 
 @media screen and (max-width: 420px) {
+  // Lap
   .new_lap {
     font-size: 15px;
   }
 
-  .controls {
+  // Controls
+  .container__controls {
     height: 120px !important;
+
+    .controls__item {
+      margin-right: 15px !important;
+    }
   }
 
-  button {
-    margin-right: 15px !important;
-  }
-
-  .time {
+  // Time Block
+  .container__time {
     width: 350px !important;
     margin: 30px auto 0;
 
@@ -143,15 +157,17 @@
 }
 
 @media screen and (max-width: 360px) {
-  .controls {
+  // Controls
+  .container__controls {
     height: 100px !important;
+
+    .controls__item {
+      font-size: 17px !important;
+    }
   }
 
-  button {
-    font-size: 17px !important;
-  }
-
-  .time {
+  // Time Block
+  .container__time {
     width: 300px !important;
     margin: 20px auto 0;
 
